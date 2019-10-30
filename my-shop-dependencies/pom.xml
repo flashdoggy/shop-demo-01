@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>xin.kevincheng</groupId>
+        <artifactId>my-shop-with-modules</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>my-shop-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <name>my-shop-dependencies</name>
+    <description></description>
+
+    <properties>
+        <!-- Environment Configuration -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.12</maven.compiler.source>
+        <maven.compiler.target>1.12</maven.compiler.target>
+        <java.version>1.12</java.version>
+
+        <!-- Dependencies Versions Management -->
+        <maven-compiler.version>3.8.1</maven-compiler.version>
+        <commons-lang.version>3.9</commons-lang.version>
+        <jstl.version>1.2</jstl.version>
+        <slf4j.version>1.7.28</slf4j.version>
+        <log4j.version>2.12.1</log4j.version>
+        <servlet-api.version>4.0.1</servlet-api.version>
+        <spring.version>5.2.0.RELEASE</spring.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Begin -->
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- Spring End -->
+
+            <!-- Servlet Begin -->
+            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <!-- Servlet End -->
+
+            <!-- Log Begin -->
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!-- Log End -->
+
+            <!-- Commons Begin -->
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <!-- Commons End -->
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!-- Compiler Plugin，Setting JDK Version -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!-- Resources Files Configuration -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+</project>

@@ -1,4 +1,8 @@
-./.idea/**
+.idea/**
+**/.idea/**
+.project
 **/.project
+.settings/**
 **/.settings/**
+target/**
 **/target/**

@@ -22,10 +22,10 @@ public class UserDaoImpl implements UserDao {
 
         User user = null;
 
-        if ("admin@kevincheng.xin".equals(email)) {
+        if ("admin@taoism-one.com".equals(email)) {
             if ("admin".equals(password)) {
                 user = new User();
-                user.setEmail("admin@kevincheng.xin");
+                user.setEmail("admin@taoism-one.com");
                 user.setUsername("KevinCheng");
 
                 logger.info("success for getUser({}), username is {}", user.getEmail(), user.getUsername());

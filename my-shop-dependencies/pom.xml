@@ -33,7 +33,11 @@
         <log4j.version>2.12.1</log4j.version>
         <servlet-api.version>4.0.1</servlet-api.version>
         <spring.version>5.2.0.RELEASE</spring.version>
-
+        <druid-version>1.1.21</druid-version>
+        <mysql-version>8.0.18</mysql-version>
+        <mybatis-version>3.5.3</mybatis-version>
+        <mybatis-spring-version>2.0.3</mybatis-spring-version>
+        <junit-jupiter-version>5.5.2</junit-jupiter-version>
     </properties>
 
     <dependencyManagement>
@@ -91,6 +95,59 @@
                 <version>${commons-lang.version}</version>
             </dependency>
             <!-- Commons End -->
+
+            <!-- Database Connection Begin -->
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-version}</version>
+            </dependency>
+            <!-- Database Connection End -->
+
+            <!-- Mybatis Begin -->
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- Mybatis End -->
+
+            <!-- Junit Begin -->
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Junit End -->
         </dependencies>
     </dependencyManagement>
 

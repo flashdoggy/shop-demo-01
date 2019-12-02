@@ -20,9 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-    @Autowired
-    private UserService userService;
-
     /**
      * jump to login page
      * @return
@@ -34,22 +31,14 @@ public class LoginController {
 
     /**
      * login
+     *
      * @param email
      * @param password
      * @return
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(@RequestParam(required = true) String email, @RequestParam(required = true) String password, HttpServletRequest httpServletRequest) {
-        User user = userService.login(email, password);
-
-        if (user == null) {
-            return login();
-        }
-
-        else {
-            httpServletRequest.getSession().setAttribute(ConstantUtils.SESSION_USER, user);
-            return "redirect:/main";
-        }
+        return null;
     }
 
     /**

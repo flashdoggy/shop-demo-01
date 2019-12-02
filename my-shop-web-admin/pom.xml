@@ -86,7 +86,7 @@
         </dependency>
         <!-- Mybatis End -->
 
-        <!-- Junit Begin -->
+        <!-- Spring Test with Junit 5 Begin -->
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -97,7 +97,14 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
         </dependency>
-        <!-- Junit End -->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Spring Test with Junit 5 End -->
     </dependencies>
 
 </project>

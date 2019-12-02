@@ -38,6 +38,7 @@
         <mybatis-version>3.5.3</mybatis-version>
         <mybatis-spring-version>2.0.3</mybatis-spring-version>
         <junit-jupiter-version>5.5.2</junit-jupiter-version>
+        <hutool.version>5.0.6</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -155,6 +156,15 @@
                 <scope>test</scope>
             </dependency>
             <!-- Spring Test with Junit 5 End -->
+
+            <!-- HuTool Begin -->
+            <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- HuTool End -->
         </dependencies>
     </dependencyManagement>
 

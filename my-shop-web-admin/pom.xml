@@ -105,6 +105,15 @@
             <scope>test</scope>
         </dependency>
         <!-- Spring Test with Junit 5 End -->
+
+        <!-- HuTool Begin -->
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <!-- HuTool End -->
     </dependencies>
 
 </project>

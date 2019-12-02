@@ -30,4 +30,14 @@ public interface TbUserService {
      * @Since
      */
     public void insertTbUser(TbUser tbUser);
+
+    /**
+     * @Author k5068
+     * @Date 2019/12/3 4:39
+     * @Description This is description of method login by email
+     * @Param [email, password]
+     * @Return xin.kevincheng.my.shop.domain.TbUser
+     * @Since
+     */
+    public TbUser loginByEmail(String email, String password);
 }

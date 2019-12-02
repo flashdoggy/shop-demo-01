@@ -25,6 +25,16 @@ public interface TbUserDao {
 
     /**
      * @Author k5068
+     * @Date 2019/12/3 4:34
+     * @Description This is description of method get user info by user email from db
+     * @Param []
+     * @Return xin.kevincheng.my.shop.domain.TbUser
+     * @Since
+     */
+    public TbUser getByEmail(String email);
+
+    /**
+     * @Author k5068
      * @Date 2019/12/2 21:08
      * @Description This is description of method insert user in db;
      * @Param []
@@ -32,4 +42,5 @@ public interface TbUserDao {
      * @Since
      */
     public void insert(TbUser tbUser);
+
 }

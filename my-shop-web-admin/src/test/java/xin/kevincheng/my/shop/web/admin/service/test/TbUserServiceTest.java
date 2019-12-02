@@ -1,5 +1,6 @@
 package xin.kevincheng.my.shop.web.admin.service.test;
 
+import cn.hutool.crypto.SecureUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,12 @@ public class TbUserServiceTest {
         }
     }
 
+    @Test
+    public void testGetByEmail() {
+        TbUser tbUser = tbUserService.loginByEmail("kevincheng@taoism-one.com", "123456");
+        System.out.println(tbUser.getUsername());
+    }
+
     /**
      * @Author k5068
      * @Date 2019/12/2 21:05
@@ -53,10 +60,10 @@ public class TbUserServiceTest {
     @Test
     public void testInsertTbUser() {
         TbUser tbUser = new TbUser();
-        tbUser.setUsername("KevinCheng");
-        tbUser.setPhone("19999999999");
-        tbUser.setEmail("taoism-one.com");
-        tbUser.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
+        tbUser.setUsername("KC");
+        tbUser.setPhone("18888888888");
+        tbUser.setEmail("kevincheng@taoism-one.com");
+        tbUser.setPassword(SecureUtil.md5("123456"));
         tbUser.setCreated(new Date());
         tbUser.setUpdated(new Date());
 

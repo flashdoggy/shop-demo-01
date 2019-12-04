@@ -31,7 +31,7 @@
 
         <jsp:include page="../includes/copyright.jsp" />
     </div>
-    
+
     <jsp:include page="../includes/footer.jsp" />
     </body>
 

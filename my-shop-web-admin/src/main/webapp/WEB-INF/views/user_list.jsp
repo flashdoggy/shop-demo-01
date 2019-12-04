@@ -1,11 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MyShop | Dashboard</title>
+        <title>MyShop | UserList</title>
         <jsp:include page="../includes/header.jsp"/>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -19,7 +18,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Dashboard
+                    User Management
                     <small>Control panel</small>
                 </h1>
                 <ol class="breadcrumb" />
@@ -32,7 +31,7 @@
 
         <jsp:include page="../includes/copyright.jsp" />
     </div>
-
+    
     <jsp:include page="../includes/footer.jsp" />
     </body>
 

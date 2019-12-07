@@ -3,7 +3,6 @@ package xin.kevincheng.my.shop.web.admin.service;
 import xin.kevincheng.my.shop.domain.TbUser;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author kc

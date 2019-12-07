@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 import xin.kevincheng.my.shop.domain.TbUser;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author kc

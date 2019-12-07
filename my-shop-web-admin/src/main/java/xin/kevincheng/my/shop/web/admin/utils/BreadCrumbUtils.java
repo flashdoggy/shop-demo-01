@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author kc
@@ -33,14 +34,21 @@ public class BreadCrumbUtils {
         StringBuilder linkSb = new StringBuilder();
 
         for (String split : breadCrumbLinksSplit) {
+            if (StrUtil.equals("main", split) && Arrays.binarySearch(breadCrumbLinksSplit, split) == breadCrumbLinksSplit.length - 1){
+                breadCrumbLinksList.clear();
+                breadCrumbLinksList.add("/main/");
+                break;
+            }
+
             if (StrUtil.endWith(linkSb.toString(), "/")) {
                 linkSb.append(split).append("/");
             }
 
-            // 空的说明是root
+            // if blank means root link
             if (StrUtil.isBlank(split)) {
-                linkSb.append("/");
+                linkSb.append("/main/");
             }
+
 
             breadCrumbLinksList.add(linkSb.toString());
         }

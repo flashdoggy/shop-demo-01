@@ -8,6 +8,7 @@ import xin.kevincheng.my.shop.domain.TbUser;
 import xin.kevincheng.my.shop.web.admin.dao.TbUserDao;
 import xin.kevincheng.my.shop.web.admin.service.TbUserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class TbUserServiceImpl implements TbUserService {
     public TbUserDao tbUserDao;
 
     @Override
-    public List<TbUser> selectAll() {
+    public ArrayList<TbUser> selectAll() {
         return tbUserDao.selectAll();
     }
 

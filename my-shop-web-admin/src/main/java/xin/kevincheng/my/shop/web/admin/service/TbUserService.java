@@ -2,6 +2,7 @@ package xin.kevincheng.my.shop.web.admin.service;
 
 import xin.kevincheng.my.shop.domain.TbUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ public interface TbUserService {
      * @Return java.util.List<xin.kevincheng.my.shop.domain.TbUser>
      * @Since
      */
-    public List<TbUser> selectAll();
+    public ArrayList<TbUser> selectAll();
 
     /**
      * @Author k5068

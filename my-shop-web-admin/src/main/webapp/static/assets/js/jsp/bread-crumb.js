@@ -17,8 +17,6 @@ BreadCrumbLinks.generateLinks = function (obj) {
         const aNode = $("<a>");
         $(aNode).attr("href", l);
         $(aNode).html(reg.exec(l)[0]);
-        console.log(l);
-        console.log(reg.exec(l)[0]);
         $(liNode).append(aNode);
         $(".breadcrumb").append(liNode);
     }

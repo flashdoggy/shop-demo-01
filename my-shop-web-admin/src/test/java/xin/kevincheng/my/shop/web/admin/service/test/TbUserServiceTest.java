@@ -60,14 +60,14 @@ public class TbUserServiceTest {
     @Test
     public void testInsertTbUser() {
         TbUser tbUser = new TbUser();
-        tbUser.setUsername("KC");
-        tbUser.setPhone("18888888888");
-        tbUser.setEmail("kevincheng@taoism-one.com");
-        tbUser.setPassword(SecureUtil.md5("123456"));
+        tbUser.setUsername("KC-4");
+        tbUser.setPhone("18888888892");
+        tbUser.setEmail("kc-4@taoism-one.com");
+        tbUser.setPassword("123456");
         tbUser.setCreated(new Date());
         tbUser.setUpdated(new Date());
 
-        tbUserService.insertTbUser(tbUser);
+        tbUserService.saveOrUpdateTbUser(tbUser, "123456", "");
     }
 
 }

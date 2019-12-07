@@ -35,6 +35,16 @@ public interface TbUserDao {
 
     /**
      * @Author k5068
+     * @Date 2019/12/7 17:57
+     * @Description This is description of method get user by user id
+     * @Param [id]
+     * @Return xin.kevincheng.my.shop.domain.TbUser
+     * @Since
+     */
+    public TbUser getById(Long id);
+
+    /**
+     * @Author k5068
      * @Date 2019/12/2 21:08
      * @Description This is description of method insert user in db;
      * @Param []
@@ -42,5 +52,15 @@ public interface TbUserDao {
      * @Since
      */
     public void insert(TbUser tbUser);
+
+    /**
+     * @Author k5068
+     * @Date 2019/12/7 18:19
+     * @Description This is description of method update user in db
+     * @Param [tbUser]
+     * @Return void
+     * @Since
+     */
+    public void update(TbUser tbUser);
 
 }

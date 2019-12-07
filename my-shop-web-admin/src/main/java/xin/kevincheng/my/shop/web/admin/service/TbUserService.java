@@ -1,5 +1,6 @@
 package xin.kevincheng.my.shop.web.admin.service;
 
+import xin.kevincheng.my.shop.commons.dao.BaseResult;
 import xin.kevincheng.my.shop.domain.TbUser;
 
 import java.util.ArrayList;
@@ -23,13 +24,24 @@ public interface TbUserService {
 
     /**
      * @Author k5068
+     * @Date 2019/12/7 17:59
+     * @Description This is description of method select user by user id
+     * @Param [id]
+     * @Return xin.kevincheng.my.shop.domain.TbUser
+     * @Since
+     */
+    public TbUser selectById(Long id);
+
+    /**
+     * @Author k5068
      * @Date 2019/12/2 21:03
-     * @Description This is description of method insert user;
+     * @Description This is description of method insert or update user;
      * @Param []
      * @Return void
      * @Since
+     * @return
      */
-    public void insertTbUser(TbUser tbUser);
+    public BaseResult saveOrUpdateTbUser(TbUser tbUser, String confirmPassword, String originalPassword);
 
     /**
      * @Author k5068

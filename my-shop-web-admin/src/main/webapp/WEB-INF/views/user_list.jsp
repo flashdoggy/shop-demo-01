@@ -35,7 +35,7 @@
                                 <div class="box-tools">
                                     <div class="input-group input-group-sm hidden-xs" style="width: 300px;">
                                         <div class="input-group-btn">
-                                            <a href="#" type="button" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Add New Account</a>
+                                            <a href="/user/form" type="button" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Add New Account</a>
                                         </div>
 
                                         <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -69,7 +69,7 @@
                                                 <td><fmt:formatDate value="${tbUser.created}" pattern="yyyy-MM-dd hh:mm:ss" /></td>
                                                 <td>
                                                     <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-search"></i> Information</a>
-                                                    <a href="#" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Modify</a>
+                                                    <a href="/user/form?tbUserId=${tbUser.id}" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Modify</a>
                                                     <a href="#" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
                                                 </td>
                                             </tr>

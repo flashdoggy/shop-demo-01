@@ -56,7 +56,7 @@ public class UserController {
         if (null != userId) {
             tbUser = tbUserService.selectById(userId);
         } else {
-            tbUser = null;
+            tbUser = new TbUser();
         }
         model.addAttribute("tbUser", tbUser);
         return "user_form";
@@ -65,8 +65,8 @@ public class UserController {
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String saveOrUpdate(
             TbUser tbUser,
-            @RequestParam(value = "confirmPassword")String confirmPassword,
-            @RequestParam(value = "originalPassword")String originalPassword,
+            @RequestParam(value = "confirmPassword", required = false)String confirmPassword,
+            @RequestParam(value = "originalPassword", required = false)String originalPassword,
             Model model, RedirectAttributes redirectAttributes) {
 
         BaseResult baseResult = tbUserService.saveOrUpdateTbUser(tbUser, confirmPassword, originalPassword);

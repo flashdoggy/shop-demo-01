@@ -33,6 +33,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
             }
         }
 
+        System.out.println(request.getRequestURL());
+
         // add generated bread crumb links in viewModel
         modelAndView.addObject("breadCrumbLinks", JSONUtil.parseArray(BreadCrumbUtils.getBreadCrumbLinks(request)));
         // add link active

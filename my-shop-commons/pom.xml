@@ -35,5 +35,14 @@
             <artifactId>log4j-core</artifactId>
         </dependency>
         <!-- Log End -->
+
+        <!-- HuTool Begin -->
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <!-- HuTool End -->
     </dependencies>
 </project>

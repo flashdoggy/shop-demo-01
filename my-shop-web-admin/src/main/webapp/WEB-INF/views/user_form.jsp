@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -28,42 +29,53 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
+                    <c:if test="${null != baseResult && baseResult.getStatus() != '200'}">
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                            ${baseResult.getMessage()}
+                        </div>
+                    </c:if>
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">${ null == tbUser ? "Add" : "Update"} User</h3>
+                            <h3 class="box-title">${ null == tbUser || null == tbUser.id ? "Add" : "Update"} User</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="/user/save" method="post">
+                        <form id="validateForm" class="form-horizontal" action="/user/save" method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" value="${tbUser.email}" />
+                                        <input type="email" class="form-control required" id="inputEmail" name="email" placeholder="Email" value="${tbUser.email}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputUsername" class="col-sm-2 control-label">Username</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username" value="${tbUser.username}" />
+                                        <input type="text" class="form-control required" id="inputUsername" name="username" placeholder="Username" value="${tbUser.username}" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone" value="${tbUser.phone}" />
+                                        <input type="text" class="form-control required mobile" id="inputPhone" name="phone" placeholder="Phone" value="${tbUser.phone}" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputOriginalPassword" class="col-sm-2 control-label">Original Password</label>
 
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputOriginalPassword" name="originalPassword" placeholder="Original Password" />
+                                <c:if test="${ null != tbUser && null != tbUser.id}" >
+                                    <div class="form-group">
+                                        <label for="inputOriginalPassword" class="col-sm-2 control-label">Original Password</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputOriginalPassword" name="originalPassword" placeholder="Original Password" />
+                                        </div>
                                     </div>
-                                </div>
+                                </c:if>
+
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-sm-2 control-label">New Password</label>
 
@@ -79,7 +91,7 @@
                                     </div>
                                 </div>
 
-                                <c:if test="${null != tbUser}" >
+                                <c:if test="${ null != tbUser && null != tbUser.id}" >
                                     <div class="form-group">
                                         <div class="col-sm-10">
                                             <input type="hidden" class="form-control" id="inputId" name="id" value="${tbUser.id}" />
@@ -108,4 +120,5 @@
 </body>
 
 <jsp:include page="../includes/bread-crumb.jsp" />
+<jsp:include page="../includes/form-validation.jsp" />
 </html>

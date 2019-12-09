@@ -5,6 +5,7 @@ import cn.hutool.crypto.SecureUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xin.kevincheng.my.shop.commons.dao.BaseResult;
+import xin.kevincheng.my.shop.commons.util.DataValidatorUtils;
 import xin.kevincheng.my.shop.domain.TbUser;
 import xin.kevincheng.my.shop.web.admin.dao.TbUserDao;
 import xin.kevincheng.my.shop.web.admin.service.TbUserService;
@@ -91,6 +92,22 @@ public class TbUserServiceImpl implements TbUserService {
 
         if (StrUtil.isBlank(tbUser.getUsername())) {
             baseResult = BaseResult.fail("user name cannot be empty!");
+        }
+
+        if (StrUtil.isBlank(tbUser.getEmail())) {
+            baseResult = BaseResult.fail("user email cannot be empty!");
+        } else if (!DataValidatorUtils.checkEmail(tbUser.getEmail())) {
+            baseResult = BaseResult.fail("user email is error!");
+        }
+
+        if (StrUtil.isBlank(tbUser.getPassword())) {
+            baseResult = BaseResult.fail("user password cannot be empty!");
+        }
+
+        if (StrUtil.isBlank(tbUser.getPhone())) {
+            baseResult = BaseResult.fail("phone number cannot be empty!");
+        } else if (!DataValidatorUtils.checkPhone(tbUser.getPhone())) {
+            baseResult = BaseResult.fail("phone number is incorrect!");
         }
 
         return baseResult;

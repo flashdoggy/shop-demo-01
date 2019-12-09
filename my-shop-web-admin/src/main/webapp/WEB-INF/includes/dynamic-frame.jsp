@@ -6,6 +6,6 @@
 
 <script language=javascript>
     $(function() {
-        LeftSideColumn.showActiveLink('${activeLinkd}');
+        LeftSideColumn.showActiveLink('${activeLink}');
     })
 </script>
